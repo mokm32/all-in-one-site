@@ -37,7 +37,7 @@
             color: #ee4d2d;
             font-size: 28px;
             font-weight: 700;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
         }
 
         p {
@@ -65,6 +65,21 @@
         .btn:hover {
             background: #d43c1e;
             transform: translateY(-2px);
+        }
+
+        .info {
+            font-size: 14px;
+            color: #666;
+            background: #f9f9f9;
+            padding: 12px;
+            border-radius: 8px;
+            border-left: 4px solid #ee4d2d;
+            margin-top: 10px;
+        }
+
+        .info i {
+            color: #ee4d2d;
+            margin-right: 8px;
         }
 
         .input-container {
@@ -162,6 +177,10 @@
                 padding: 12px;
             }
 
+            .info {
+                font-size: 13px;
+            }
+
             .animation-container {
                 font-size: 36px;
             }
@@ -176,12 +195,12 @@
     <div class="container">
         <h1>Selamat Datang di Layanan Pelanggan Kami!</h1>
         <p>
-            Cara menemukan ID Pesanan: Buka aplikasi Shopee > Pesanan Saya > Pilih pesanan > Lihat ID Pesanan pada detail pesanan.
-        </p>
-        <p>
             Kami sangat senang dapat melayani Anda di toko Shopee kami. Untuk pengalaman belanja yang lebih lancar, mohon siapkan <strong>ID Pesanan</strong> Anda untuk dapatkan file apk produk yang anda pesan.
         </p>
         <button class="btn" onclick="showInputForm()">ID PESANAN</button>
+        <div class="info" id="infoText">
+            <p><i class="fas fa-info-circle"></i>Cara menemukan ID Pesanan: Buka aplikasi Shopee > Pesanan Saya > Pilih pesanan > Lihat ID Pesanan pada detail pesanan.</p>
+        </div>
 
         <div class="input-container" id="inputForm">
             <input type="text" id="orderId" placeholder="Masukkan ID Pesanan Anda" required>
@@ -217,11 +236,13 @@
         const counterElement = document.getElementById('counter');
         const resultContainer = document.getElementById('result');
         const mainButton = document.querySelector('.btn');
-        const mainParagraph = document.querySelectorAll('p')[1]; // Paragraf kedua
+        const mainParagraph = document.querySelector('p');
+        const infoText = document.getElementById('infoText');
 
         function showInputForm() {
             mainButton.style.display = 'none';
             mainParagraph.style.display = 'none';
+            infoText.style.display = 'none';
             inputForm.style.display = 'block';
         }
 
