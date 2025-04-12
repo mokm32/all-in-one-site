@@ -37,7 +37,7 @@
             color: #ee4d2d;
             font-size: 28px;
             font-weight: 700;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
         }
 
         p {
@@ -175,8 +175,9 @@
 <body>
     <div class="container">
         <h1>Selamat Datang di Layanan Pelanggan Kami!</h1>
-νια
-
+        <p>
+            Cara menemukan ID Pesanan: Buka aplikasi Shopee > Pesanan Saya > Pilih pesanan > Lihat ID Pesanan pada detail pesanan.
+        </p>
         <p>
             Kami sangat senang dapat melayani Anda di toko Shopee kami. Untuk pengalaman belanja yang lebih lancar, mohon siapkan <strong>ID Pesanan</strong> Anda untuk dapatkan file apk produk yang anda pesan.
         </p>
@@ -216,7 +217,7 @@
         const counterElement = document.getElementById('counter');
         const resultContainer = document.getElementById('result');
         const mainButton = document.querySelector('.btn');
-        const mainParagraph = document.querySelector('p');
+        const mainParagraph = document.querySelectorAll('p')[1]; // Paragraf kedua
 
         function showInputForm() {
             mainButton.style.display = 'none';
